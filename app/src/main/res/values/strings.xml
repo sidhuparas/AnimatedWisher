@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">AnimatedWisher</string>
+    <string name="first_greeting">First Greeting Message</string>
+    <string name="last_greeting">Last Greeting Message</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="submit">Submit</string>
 </resources>

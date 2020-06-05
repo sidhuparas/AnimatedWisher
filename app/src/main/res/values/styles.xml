@@ -7,4 +7,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="InputEditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:inputType">text</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="BaseEditTextStyle" parent="InputEditTextStyle">
+
+    </style>
 </resources>

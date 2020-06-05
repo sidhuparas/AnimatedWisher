@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.animation.AccelerateInterpolator
 import android.view.animation.DecelerateInterpolator
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -15,7 +14,29 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        window.statusBarColor = Color.BLACK
         animateTitle()
+        setListeners()
+    }
+
+    private fun setListeners() {
+        submitBtn.setOnClickListener {
+            if (checkFields().not()) {
+                toast("Please fill all the fields!")
+                return@setOnClickListener
+            }
+
+            startActivity(WishActivity.newInstance(this, getWishData()))
+        }
+    }
+
+    private fun checkFields(): Boolean {
+        if (firstGreetingMessage.isBlank() || lastGreetingMessage.isBlank() || firstName.isBlank()
+            || lastName.isBlank()
+        )
+            return false
+
+        return true
     }
 
     private fun animateTitle() {
@@ -44,4 +65,11 @@ class MainActivity : AppCompatActivity() {
             }
             .start()
     }
+
+    private fun getWishData() = WishData(
+        firstGreetingMessage.message(),
+        lastGreetingMessage.message(),
+        firstName.message(),
+        lastName.message()
+    )
 }

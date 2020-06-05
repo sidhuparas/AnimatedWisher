@@ -11,33 +11,35 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-      <TextView
-          android:id="@+id/appName"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="@string/app_name"
-          android:fontFamily="sans-serif-light"
-          android:textSize="28sp"
-          app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toTopOf="parent" />
-
-      <com.google.android.material.textfield.TextInputLayout
-          android:id="@+id/textInputLayout"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          app:layout_constraintBottom_toBottomOf="parent"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toTopOf="parent"
-          app:layout_constraintVertical_bias="0.2">
-
-        <EditText
-            android:layout_width="200dp"
+        <TextView
+            android:id="@+id/appName"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="First Greeting Message" />
-      </com.google.android.material.textfield.TextInputLayout>
+            android:fontFamily="sans-serif-light"
+            android:text="@string/app_name"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.2">
+
+            <EditText
+                style="@style/BaseEditTextStyle"
+                android:id="@+id/firstGreetingMessage"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/first_greeting" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="wrap_content"
@@ -49,9 +51,11 @@
             app:layout_constraintVertical_bias="0.4">
 
             <EditText
+                style="@style/BaseEditTextStyle"
+                android:id="@+id/lastGreetingMessage"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:hint="Last Greeting Message" />
+                android:hint="@string/last_greeting" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -64,9 +68,11 @@
             app:layout_constraintVertical_bias="0.6">
 
             <EditText
+                style="@style/BaseEditTextStyle"
+                android:id="@+id/firstName"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:hint="First Name" />
+                android:hint="@string/first_name" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -79,10 +85,27 @@
             app:layout_constraintVertical_bias="0.8">
 
             <EditText
+                style="@style/BaseEditTextStyle"
+                android:id="@+id/lastName"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:hint="Last Name" />
+                android:hint="@string/last_name" />
         </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/submitBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:backgroundTint="@color/royal_blue"
+            app:icon="@drawable/ic_check"
+            app:iconTint="@android:color/white"
+            android:text="@string/submit"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:rippleColor="@android:color/white" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.core.widget.NestedScrollView>
