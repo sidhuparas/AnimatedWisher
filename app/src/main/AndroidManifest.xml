@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".WishActivity"></activity>
+        <activity android:name=".WishActivity"/>
         <activity
             android:name=".MainActivity"
             android:windowSoftInputMode="adjustResize">

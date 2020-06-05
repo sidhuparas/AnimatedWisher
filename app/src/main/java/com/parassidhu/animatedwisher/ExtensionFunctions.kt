@@ -39,13 +39,13 @@ fun View.endState(right: Boolean = false) {
     val scaleX = PropertyValuesHolder.ofFloat(View.SCALE_X, 3.5f)
     val scaleY = PropertyValuesHolder.ofFloat(View.SCALE_Y, 3.5f)
 
-    val rotateX = PropertyValuesHolder.ofFloat(View.ROTATION_X, 20f)
-    val rotateY = PropertyValuesHolder.ofFloat(View.ROTATION_Y, if (right) -20f else 20f)
+    val rotateX = PropertyValuesHolder.ofFloat(View.ROTATION_X, 15f)
+    val rotateY = PropertyValuesHolder.ofFloat(View.ROTATION_Y, if (right) -15f else 15f)
 
     val animator = ObjectAnimator.ofPropertyValuesHolder(this, scaleX, scaleY, rotateX, rotateY)
 
     animator.apply {
-        duration = 1000
+        duration = 600
         start()
     }
 }
